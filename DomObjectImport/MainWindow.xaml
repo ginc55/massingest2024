@@ -1,0 +1,58 @@
+﻿<Window x:Class="DomObjectImport.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DomObjectImport"
+        mc:Ignorable="d"
+      Title="" Height="714.73" Width="845.706" Background="#2A3132">
+    <Border Margin="10, 10, 10, 10" BorderBrush="Gray" BorderThickness="2,2,2,2" Background="#336B87" CornerRadius="12">
+        <Grid Background="#CCDDFF" ShowGridLines="false">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <CheckBox x:Name="checkbox" Content="produkcijas vide" Margin="160,73,124,38" Height="21" HorizontalAlignment="Center" Width="123" Checked="CheckBox_Checked" Foreground="Black" Grid.Row="4"/>
+            <StackPanel Orientation="Horizontal" Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="2" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="100, 0, 100, 0">
+
+                <Button FontWeight="Bold" Background="#AA8877" Content="Veikt importu"   Margin="10,20,247,0" VerticalAlignment="Top" Width="150" Height="40" Click="Button_Click" Foreground="White" BorderBrush="Black" />
+                <Button FontWeight="Bold" Content="Izveleties kur atrodas faili" Margin="-250, 20, 33, 72" Height="40" Width="160" Click="Button_Click_1" Background="#AA8877" Foreground="White" BorderBrush="Black"/>
+                <Button FontWeight="Bold" HorizontalAlignment="Left" Content="Izvēlēties failu" Margin="-40,20,0,72" Click="choose_file" Height="40" Width="150" Background="#AA8877" RenderTransformOrigin="0.5,0.5" Foreground="White" BorderBrush="Black">
+                    <Button.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform AngleX="-0.295"/>
+                            <RotateTransform/>
+                            <TranslateTransform X="1.003"/>
+                        </TransformGroup>
+                    </Button.RenderTransform>
+                </Button>
+            </StackPanel>
+            <DataGrid x:Name="DataGridView1" HorizontalAlignment="Left" Height="466" Margin="100,10,0,0" VerticalAlignment="Top" Width="632" SelectionChanged="DataGrid_SelectionChanged" Grid.ColumnSpan="2" Grid.RowSpan="4">
+                <DataGrid.GroupStyle>
+                    <GroupStyle>
+                        <GroupStyle.HeaderTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Name}"/>
+                            </DataTemplate>
+                        </GroupStyle.HeaderTemplate>
+                    </GroupStyle>
+                </DataGrid.GroupStyle>
+            </DataGrid>
+            <ComboBox x:Name="Sheetcombobox" HorizontalAlignment="Left" Margin="114,107,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="ComboBox_SelectionChanged" BorderBrush="Black" Background="Black" Height="25" Grid.Row="3" RenderTransformOrigin="0.5,0.5" Grid.Column="1"/>
+            <Label Content="Darba Lapas nosaukums&#xD;&#xA;" HorizontalAlignment="Left" Margin="376,107,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.204,-0.018" Height="25" Width="140" Foreground="Black" Grid.Row="3" Grid.ColumnSpan="2"/>
+            <Button FontWeight="Bold" x:Name="Errorlist" Content="Izvades saraksts" Margin="248,0,0,126" VerticalAlignment="Bottom" Click="Button_Click_2" Foreground="White" BorderBrush="Black" Background="#AA8877" Height="38" Grid.Row="3" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Left" Width="97" Grid.Column="1" Grid.RowSpan="2">
+
+            </Button>
+            <CheckBox x:Name="verify_only" Content="Tikai pārbaudīt&#xD;&#xA;" HorizontalAlignment="Left" Margin="346,73,0,0" VerticalAlignment="Top" Height="21" Width="106" Checked="CheckBox_Checked_1" Foreground="Black" Grid.Row="4" Grid.ColumnSpan="2"/>
+
+        </Grid>
+    </Border>
+</Window>
